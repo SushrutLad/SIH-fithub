@@ -1,0 +1,43 @@
+:root{
+  --bg:#0b1220; --card:#0f1724; --muted:#9aa7bd; --accent:#5b7cff; --accent-2:#00d4ff; --glass:rgba(255,255,255,0.03);
+  --radius:12px; --shadow: 0 8px 30px rgba(2,6,23,0.6);
+}
+[data-theme="light"]{ --bg:#f7f9fc; --card:#ffffff; --muted:#6b7280; --accent:#3b82f6; --accent-2:#06b6d4; color:#111827; }
+*{box-sizing:border-box}
+html,body,#root{height:100%; margin:0; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+body{background:linear-gradient(180deg,#071025 0%, #0b1220 100%); color:#e6eef8}
+.topbar{height:64px; display:flex; align-items:center; justify-content:space-between; padding:0 20px; background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);}
+.brand a{color:var(--accent-2); text-decoration:none; font-weight:700; font-size:20px}
+.btn{background:transparent; border:1px solid rgba(255,255,255,0.06); padding:8px 12px; border-radius:10px; color:inherit; cursor:pointer}
+.layout{display:grid; grid-template-columns: 38% 62%; gap:18px; padding:18px; max-width:1200px; margin:20px auto}
+.left-chat{background:var(--card); border-radius:12px; padding:12px; box-shadow:var(--shadow); min-height:80vh; overflow:hidden}
+.main-area{min-height:80vh}
+.chat-shell{display:flex; flex-direction:column; height:100%}
+.chat-shell h3{margin:0 0 8px 0}
+.chat-window{flex:1; overflow:auto; padding:8px; background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent); border-radius:8px}
+.bubble{margin:8px 0; padding:10px 12px; border-radius:12px; max-width:80%}
+.bubble.user{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#021026; margin-left:auto}
+.bubble.bot{background:rgba(255,255,255,0.02); color:var(--muted)}
+.chat-input{display:flex; gap:8px; margin-top:8px}
+.chat-input input{flex:1; padding:10px 12px; border-radius:10px; background:transparent; border:1px solid rgba(255,255,255,0.04)}
+.grid-tiles{display:grid; grid-template-columns:repeat(2, 1fr); gap:16px}
+.tile{background:var(--card); padding:18px; border-radius:12px; box-shadow:var(--shadow)}
+.tile h2{margin:0 0 6px 0}
+.card{background:var(--card); padding:16px; border-radius:12px; box-shadow:var(--shadow)}
+.tracker-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+.tracker-card{background:var(--glass); padding:12px; border-radius:10px}
+.big{font-size:24px; font-weight:700; margin-top:8px}
+.posts .post{background:rgba(255,255,255,0.02); padding:12px; border-radius:10px; margin-bottom:10px}
+.auth-card{max-width:420px; margin:30px auto}
+.movenet-page .controls{display:flex; gap:8px; align-items:center; margin-bottom:12px}
+.video-wrap{position:relative; background:#000; border-radius:10px; overflow:hidden; min-height:360px}
+.video-wrap video{display:block; width:100%}
+.fps-badge{position:absolute; top:12px; right:12px; background:rgba(0,0,0,0.5); padding:6px 8px; border-radius:8px}
+.status{margin-top:8px; color:var(--muted)}
+.left-chat .btn, .topbar .btn { border: 1px solid rgba(255,255,255,0.05) }
+@media (max-width: 980px){
+  .layout{grid-template-columns:1fr; padding:12px}
+  .left-chat{order:2}
+  .main-area{order:1}
+  .grid-tiles{grid-template-columns:1fr}
+}
